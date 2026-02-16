@@ -10,8 +10,10 @@ This project focuses on automated content moderation and online safety.
 With the rapid growth of social media platforms, detecting and filtering hateful content has become essential.  
 This project builds a deep learning model that classifies text into:
 
-- Hate Speech
-- Non-Hate Speech
+Classes:
+0 → Non-hate
+1 → Hate
+
 
 using Natural Language Processing and LSTM.
 
