@@ -1,116 +1,161 @@
-📄 README.md
-# Hate Speech Detection Using LSTM (Hinglish Text)
+# 🧠 Hate Speech Detection Using LSTM
 
-## 📌 Project Overview
+A Deep Learning based NLP project that detects whether a given text contains hate speech or not using an LSTM (Long Short-Term Memory) network.  
+This project focuses on automated content moderation and online safety.
 
-This project implements a **Hate Speech Detection system for Hinglish (Hindi + English code-mixed) text** using a **Long Short-Term Memory (LSTM)** deep learning model.
+---
 
-The model classifies text into:
+## 📌 Problem Statement
 
-- **0 → Non-Hate Speech**
-- **1 → Hate Speech**
+With the rapid growth of social media platforms, detecting and filtering hateful content has become essential.  
+This project builds a deep learning model that classifies text into:
 
-This project demonstrates a complete NLP pipeline from preprocessing to evaluation.
-- Text preprocessing
-- Train-test split
-- Vocabulary creation
-- Sequence encoding
-- LSTM model training
-- Performance evaluation
-  
+- Hate Speech
+- Non-Hate Speech
+
+using Natural Language Processing and LSTM.
+
 ---
 
 ## 📊 Dataset
 
-- Total samples: **25,000**
-- Hate speech: **15,000**
-- Non-hate speech: **10,000**
-- Language: **Hinglish**
+- Labeled text dataset for hate speech detection  
+- Total test samples: **5000**
 
-⚙️ Technologies Used:
-
--Python
--PyTorch
--Pandas
--Scikit-learn
--Regex (re) 
-
-## 🚀 Project Highlights
-
-✔ Handles Hinglish code-mixed text  
-✔ Prevents data leakage (vocabulary built after train-test split)  
-✔ Handles class imbalance using weighted loss  
-✔ Uses LSTM for sequential learning  
-✔ Realistic evaluation using multiple metrics  
+*(Dataset source link here:- https://www.kaggle.com/datasets/pankaazshah/code-mixed-text-dataset-hinglish)*
 
 ---
 
-## 🧠 How It Works
+## ⚙️ Tech Stack
 
-Raw Text
-↓
-Text Cleaning
-↓
-Tokenization
-↓
-Sequence Padding
-↓
-LSTM Model
-↓
-Prediction (Hate / Non-Hate)
-
+- Python  
+- TensorFlow / Keras  
+- NumPy  
+- Pandas  
+- Matplotlib / Seaborn  
+- Scikit-learn  
+- NLP (Tokenization, Padding)
 
 ---
 
-## 📂 Project Structure
+## 🧠 Model Architecture
 
-Hate-Speech-Detection-Using-LSTM
-│
-├── src/
-│ └── Hate_Speech_Detection.py
-│
-├── dataset/
-│ └── hinglish_cyberbullying_dataset_25000.csv ← place dataset here
-│
-├── requirements.txt
-├── README.md
-└── sample_output.png
-
+- Text Preprocessing  
+- Tokenization & Sequence Padding  
+- Embedding Layer  
+- LSTM Layer  
+- Dropout Layer  
+- Dense Output Layer  
 
 ---
 
-## ⚙️ Installation & Setup
+## 📈 Training Performance
 
-### 1️⃣ Clone the Repository
+| Metric | Value |
+|--------|-------|
+Final Training Loss | **0.5034**  
+Accuracy | **74%**  
+Macro Precision | **0.80**  
+Macro Recall | **0.78**  
+Macro F1-score | **0.74**  
+Weighted F1-score | **0.73**  
+
+---
+
+## 📉 Classification Report
+
+| Class | Precision | Recall | F1-score | Support |
+|-------|-----------|--------|----------|----------|
+| 0 (Non-Hate) | 0.60 | 1.00 | 0.75 | 2000 |
+| 1 (Hate) | 1.00 | 0.56 | 0.72 | 3000 |
+
+### ✅ Overall Accuracy: **74%**
+
+---
+
+## 🔢 Confusion Matrix
+
+[[2000 0]
+[1316 1684]]
+
+
+### Interpretation
+
+- Class **0** is perfectly recalled (no false negatives)
+- Some hate speech instances are misclassified as non-hate
+- Model shows scope for improving recall for hate speech detection
+
+---
+
+## 📊 Model Learning Curve
+
+### Training Loss per Epoch
+
+Epoch 1 → 0.5610
+Epoch 2 → 0.5541
+Epoch 3 → 0.5485
+Epoch 4 → 0.5445
+Epoch 5 → 0.5397
+Epoch 6 → 0.5357
+Epoch 7 → 0.5320
+Epoch 8 → 0.5270
+Epoch 9 → 0.5218
+Epoch 10 → 0.5165
+Epoch 11 → 0.5106
+Epoch 12 → 0.5034
+
+
+✅ Loss consistently decreases → model is learning effectively.
+
+---
+
+## 🚀 How to Run the Project
+
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/harshitt486/Hate-Speech-Detection-Using-LSTM.git
 cd Hate-Speech-Detection-Using-LSTM
-2️⃣ Install Dependencies
+2️⃣ Install dependencies
 pip install -r requirements.txt
-This makes the project runnable in one command.
+3️⃣ Run the model
+python Hate_Speech_Detection.py
+🔍 Sample Predictions
+Input Text	Prediction
+I hate you	Hate Speech
+Have a nice day	Non-Hate Speech
+🌍 Real-World Applications
+Social media content moderation
 
-3️⃣ Run the Project
-python src/Hate_Speech_Detection.py
-📈 Results
-Accuracy: 75%
-Macro F1-score: 0.74
+Cyberbullying detection
 
-Confusion Matrix
-[[2000    0]
- [1259 1741]]
+Online community monitoring
 
-🔮 Future Work
-Bidirectional LSTM
+AI-based safety systems
 
-BERT fine-tuning
+🔮 Future Improvements
+Use BiLSTM / GRU
 
-Streamlit web app deployment
+Hyperparameter tuning
 
-Real-time hate speech detection
+Pretrained embeddings (GloVe / Word2Vec)
 
-🎓 Academic Use
-Developed as a Mini Project for B.Tech – Computer Science (Cyber Security).
+Transformer-based models (BERT)
 
+Deploy using Streamlit / Flask
+
+📂 Project Structure
+Hate-Speech-Detection-Using-LSTM
+│── Hate_Speech_Detection.py
+│── requirements.txt
+│── README.md
 👨‍💻 Author
 Harshit Kumar Tiwari
+🎓 B.Tech CSE (Cyber Security)
+📍 India
+
+🔗 GitHub: https://github.com/harshitt486
+🔗 LinkedIn: https://www.linkedin.com/in/harshit-tiwari-8206b1329
+
+⭐ Support
+If you found this project useful, give it a ⭐ on GitHub!
