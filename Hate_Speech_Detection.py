@@ -7,10 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 
 # 1️⃣ Load Dataset (FULL PATH FIXED)
-data = pd.read_csv(
-    r"D:\Mini Project 2023-24\hinglish_cyberbullying_dataset_25000.csv",
-    encoding="latin-1"
-)
+data = pd.read_csv("dataset/hinglish_cyberbullying_dataset_25000.csv")
 
 texts = data['Text'].astype(str).tolist()
 labels = data['Label'].tolist()
@@ -115,3 +112,4 @@ print(classification_report(y_test.numpy(), predictions.numpy()))
 
 print("\nConfusion Matrix:\n")
 print(confusion_matrix(y_test.numpy(), predictions.numpy()))
+
